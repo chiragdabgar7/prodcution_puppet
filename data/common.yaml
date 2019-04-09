@@ -1,0 +1,27 @@
+---
+nodes:
+  - 'n4'
+users:
+   'katy':
+      ensure: absent
+      shell: '/bin/bash'
+   'lark':
+      ensure: present
+      shell: '/bin/sh'
+   'chirag.da':
+      ensure: present
+      shell: '/bin/bash'
+      managehome: true
+   'terry':
+      ensure: present
+      shell: '/bin/bash'
+      managehome: true
+    
+auth_keys:
+   'keys for chirag.da':
+      ensure: present
+      key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDhvE88Vus8+DyhQHqtS+F2UEN+UzTZHLP93xkJQcjrj7VIo4LxsyJx8omK2/XRQ1DKR4noPwwCWxlqvsj6ndWL/AP3dk2uKmKG+rP4W3YuI12PNJuGiWRfgSU+Vk7EhqL44MF3LLHXVYdc8EYHeJomNFvV0Wa46XbIu0I59dm62qVWvYVlH3YqprKEKhCic3N5E2AUe7qcbMZ/a4qdz3K3PiSX063n/2bNRoRfBfyGF1ln4KRDdR027kC60zQRvYERBTFlonCT9fAZtIz+9wE+EPbwTFjmJxVe/eXCS0K9Bo+sqCjm2zXrf8D6d++xGX+Qv/htiT3zyaRVkuPgzFvz'
+      name: 'chirag.da'
+      type: 'rsa'
+#   'charles':
+#      key:

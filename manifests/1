@@ -1,0 +1,12 @@
+node 'n4' {
+		file {'/tmp/hello.txt':
+			ensure	=> present,
+			content	=> "Hello World\n",
+		}
+
+	lookup('users', Hash, 'hash').each | String $username, Hash $attrs | {
+		user { $username:
+			*	=> $attrs,
+	}
+	}
+}

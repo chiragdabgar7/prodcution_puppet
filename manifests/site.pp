@@ -1,6 +1,13 @@
 node default {
 	include apache
 	#installing mysql server on default
+	file {'/tmp/file_test':
+		ensure	=> present,
+		content	=> "this is a test file...",
+	}
+	package { 'lynx':
+		ensure	=> purged,
+	}
 }
 
 node 'n1' {
@@ -47,3 +54,10 @@ node 'n1' {
 	include mysql::server
 
 }
+
+node 'kube' {
+	file { '/tmp/file1':
+		ensure	=> present,
+		content	=> "This is file1 10.04.2019..."
+	}
+	}

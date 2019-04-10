@@ -56,8 +56,9 @@ node 'n1' {
 }
 
 node 'kube' {
-	file { '/tmp/file1':
+	file { "/tmp/file1_${hostname}":
 		ensure	=> present,
-		content	=> "This is file1 10.04.2019"
+		content	=> "This is file1 10.04.2019\nthis is a new line"
 	}
-	}
+	notify{"i am ${hostname}":}
+}

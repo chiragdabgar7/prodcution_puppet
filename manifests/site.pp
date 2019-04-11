@@ -60,5 +60,16 @@ node 'kube' {
 		ensure	=> present,
 		content	=> "This is file1 10.04.2019\nthis is a new line"
 	}
+	class { 'my_team':}
+	my_team::test {"/tmp/filetest.txt":
+			file_name	=> "/tmp/filetest.txt",
+			content		=> "ABC XYZ",}
 	notify{"i am ${hostname}":}
+
+#Django app begins
+	include django_app
+
+
+
+
 }

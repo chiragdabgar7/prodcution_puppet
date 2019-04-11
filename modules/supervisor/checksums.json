@@ -1,0 +1,10 @@
+{
+  "files/Debian.supervisord": "c7aea41a3f7bf95acf2cdcfcc134efe8",
+  "templates/program.conf.erb": "88bce867b4e52f20064c6ab4d00fbf11",
+  "manifests/program.pp": "5ecce4180c3159fd0f0c8c05128fe08a",
+  "manifests/init.pp": "253bb9647c75ad73a9f11d7d4590ee35",
+  "metadata.json": "00f519951ef73a7ce31e23cd21e75a2d",
+  "files/RedHat.supervisord": "d9a253f8badf6a5bc98bf0060fb60ea7",
+  "templates/supervisord.conf.erb": "b2a68cf989b2b6ceae0abaf0181f0224",
+  "README.md": "9f9c5b7f6359fc0084e6964dd89360b9"
+}

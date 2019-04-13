@@ -63,12 +63,18 @@ node 'kube' {
 	class { 'my_team':}
 	my_team::test {"/tmp/filetest.txt":
 			file_name	=> "/tmp/filetest.txt",
-			content		=> "ABC XYZ",}
+			content		=> "ABC XYZ EFG",}
 	notify{"i am ${hostname}":}
+	$role=$facts['role']
+	if $role == 'web'{
+		notify{"THis is a web server":}
+	}else{
+		notify{"This is not a web server":}
+	}
+	notify{"${role}":}
 
 #Django app begins
 	include django_app
-
 
 
 

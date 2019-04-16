@@ -1,13 +1,5 @@
 node default {
-	include apache
-	#installing mysql server on default
-	file {'/tmp/file_test':
-		ensure	=> present,
-		content	=> "this is a test file...",
-	}
-	package { 'lynx':
-		ensure	=> purged,
-	}
+	notify{"I am hollow. I got nothing in me":}
 }
 
 node 'n1' {
@@ -75,7 +67,7 @@ node 'kube' {
 
 #Django app begins
 	include django_app
-
+	include my_team
 
 
 }

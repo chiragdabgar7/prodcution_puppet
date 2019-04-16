@@ -6,6 +6,9 @@ class my_team {
 	class {'my_team::params':}
 	class {'my_team::myteam':}
 	class {'my_team::test_class':}
+	notify{"Installing ntp":}
+	class {'my_team::my_ntp':}
+	class {'my_team::file_epp':}
 #	package {'apache2':
 #		ensure	=> purged,
 #	}

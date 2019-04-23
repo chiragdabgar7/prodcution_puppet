@@ -1,6 +1,5 @@
 class django_app {
 	notify {"welcome to Django app module":}
-	include nginx
 	include supervisor
 	class {'django_app::dependencies':}
 	

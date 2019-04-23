@@ -1,5 +1,11 @@
 node default {
 	notify{"I am hollow. I got nothing in me":}
+#	class { 'grafana': 
+#		install_method	=> 'docker',}
+	notice($facts['partitions']["/dev/sda1"]["size_bytes"])
+	package { 'grafana':
+		ensure	=> installed,
+	}
 }
 
 node 'n1' {
@@ -64,10 +70,21 @@ node 'kube' {
 		notify{"This is not a web server":}
 	}
 	notify{"${role}":}
-
+	include my_team
 #Django app begins
 	include django_app
-	include my_team
-
-
+	docker::image { 'graphiteapp/graphite-statsd':
+		ensure	=> present,
+		}
+	docker::image { 'nginx':
+		ensure	=> latest,
+	}
+#	include ::java	
+#	class { 'elasticsearch':
+#		ensure	=> absent,
+#		jvm_options	=> [
+#		'-Xms128m',
+#		'-Xms128m']
+#		}
+	#apache setting for node kube
 }
